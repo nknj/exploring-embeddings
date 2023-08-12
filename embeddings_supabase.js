@@ -56,6 +56,7 @@ const context_data_with_embeddings = context_data.map((text, index) => ({
   embedding: embeddingMap[index],
 }));
 
+//      save embeddings to vector DB (supabase)
 const savetosupbase = await supabase.from('documents').insert(context_data_with_embeddings)
 
 //      api request for prompt data
